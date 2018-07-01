@@ -1,4 +1,4 @@
-# Estudando a implementação de classes do JavaScript
+# Todo list
 
 Este projeto foi criado com o intuito de colocar em prática meus
 os conhecimentos adquiridos sobre a implementação de classes e alguns
@@ -7,6 +7,50 @@ um Todo List ir acrescentando recursos à medida que avanço com meus estudos.
 
 Este projeto foi inspirado no projeto [Todo list](https://larismourullo.github.io/todo-list/)
 da Larissa Mourullo.
+
+## Estudo de caso
+
+A lista das tarefas, ou todo list como nós costumamos dizer, é a mais
+simples e eficaz ferramenta de produtividade pessoal. Todos nós já tivemos a
+necessidade de fazer uma lista escrevendo as coisas que precisamos fazer.
+
+Uma tarefa pode possuir uma descrição, um status (finalizada ou não) uma
+data de finalização e outras informações.
+
+Uma lista de tarefas pode adicionar uma tarefa, pode remover uma ou todas
+as tarefas.
+
+Sempre que uma tarefa for acrescentada na lista de tarefas ou possuir
+seu status alterado, essas informações devem ser refletida na view
+(data binding).
+
+Essas tarefas podem ser salvas em um banco de dados ou serem "pegas"
+de uma API externa.
+
+O projeto não é _tão complexo assim_, mas para facilitar futuras manutenções
+e seguir uma linha de raciocínio, deve haver uma separação entre a regra de
+negócio e a exibição da informação para o usuário final.
+
+> **Atenção:** Nem todos esses recursos já foram implementados.
+
+### Não se prenda na simplicidade do projeto, se prenda na implementação
+
+A intenção deste projeto é criar uma espécie de framework (apenas para fins didáticos)
+com alguns recursos existentes nos principais frameworks do mercado.
+
+Então foram/serão aplicados neste projeto alguns design patterns e features interessantes do JavaScript moderno:
+
+- Foi aplicado o padrão MVC, onde fica claro a separação Model-View-Controller
+
+- Para fins de conhecimento, optei por criar toda a estrutura do projeto
+  utilizando classes
+
+- As views são criadas utilizando o recurso de template literals
+
+- Foi acrescentado um recurso que simula o princípio da reatividade. Como
+  assim?! Não entendi. Execute este código no seu terminal: `todoController._message.message = "Estou testando a reatividade."`
+
+- Futuramente será criada uma API que utilizará `promises`, `async` e `await`
 
 ## Começando
 
