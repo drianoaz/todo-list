@@ -44,7 +44,7 @@ testes automatizados neste projeto.
 
 ## Próximas etapas
 
-- [ ] Publicar no github pages.
+- [x] Publicar no github pages.
 - [ ] Adicionar webpack e incluir recurso de minificação do código fonte.
 - [ ] Adicionar suporte para navegadores antigos utilizando babel.
 - [ ] Adicionar suporte à imports e corrigir multiplas tags scripts no arquivo `index.html`
