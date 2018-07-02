@@ -1,7 +1,8 @@
 class TodoController {
 
 	constructor(selectors) {
-    const { input, container } = selectors
+
+    	const { input, container, message } = selectors;
 
 		let $ = document.querySelector.bind(document);
 
@@ -14,7 +15,7 @@ class TodoController {
 
 		this._message = new Bind(
 			new Message(),
-			new MessageView($(container))
+			new MessageView($(message))
 		);
 	}
 
