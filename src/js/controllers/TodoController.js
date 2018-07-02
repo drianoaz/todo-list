@@ -1,19 +1,20 @@
 class TodoController {
 
-	constructor() {
+	constructor(selectors) {
+    const { input, container } = selectors
 
 		let $ = document.querySelector.bind(document);
 
-		this._inputTodo = $("#todo");
+		this._inputTodo = $(input);
 
 		this._todoList = new Bind(
 			new TodoList(),
-			new TodoListView($("#todo-container"))
+			new TodoListView($(container))
 		);
 
 		this._message = new Bind(
 			new Message(),
-			new MessageView($("#message-container"))
+			new MessageView($(container))
 		);
 	}
 
