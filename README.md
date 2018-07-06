@@ -1,4 +1,4 @@
-# Todo list
+# Todo list.
 
 Este projeto foi criado com o intuito de colocar em prática meus
 os conhecimentos adquiridos sobre a implementação de classes e alguns
