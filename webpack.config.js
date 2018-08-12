@@ -1,5 +1,12 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
+
+const copyFiles = [
+  { from: './src/index.html', to: './' }
+];
+
 
 module.exports = env => {
   return {
@@ -7,9 +14,9 @@ module.exports = env => {
       app: './src/js/app.js'
     },
     output: {
-      filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist/js'),
-      publicPath: 'dist/js',
+      filename: 'js/[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '',
     },
     module: {
       rules: [
@@ -26,7 +33,11 @@ module.exports = env => {
       ],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env.WEBPACK_MODE': JSON.stringify(process.env.WEBPACK_MODE)
+      }),
       new CleanWebpackPlugin(['dist']),
+      new CopyWebpackPlugin(copyFiles),
     ]
   };
 };
