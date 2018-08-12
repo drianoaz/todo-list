@@ -1,7 +1,10 @@
-class TodoListView extends View {
+import View from './View';
 
-	_template(model) {
-		return `
+export default class TodoListView extends View {
+
+  _template(model) {
+
+    return `
 			<ul class="list-group">
 				${model.list.map(todoItem => `
 
@@ -15,6 +18,6 @@ class TodoListView extends View {
 				`).join('')}
 			</ul>
 		`;
-	}
+  }
 
 }

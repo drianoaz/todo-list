@@ -1,0 +1,38 @@
+{
+  "name": "todo-list",
+  "version": "0.0.1",
+  "description": "Este projeto foi criado com o intuito de colocar em prática meus os conhecimentos adquiridos sobre a implementação de classes e alguns design patterns do JavaScript moderno. A ideia inicial é desenvolver um Todo List ir acrescentando recursos à medida que avanço com meus estudos.",
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0-rc.1",
+    "babel-loader": "^8.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.3.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "lint": "npm run lint:js",
+    "lint:js": "eslint ./src/",
+    "fix:js": "eslint ./src/ --fix",
+    "dev": "./nodewebpack-dev-server -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drianoaz/todo-list.git"
+  },
+  "keywords": [],
+  "author": "Adriano de Azevedo <adrianopato.az@gmail.com> (https://drianoaz.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drianoaz/todo-list/issues"
+  },
+  "homepage": "https://github.com/drianoaz/todo-list#readme"
+}

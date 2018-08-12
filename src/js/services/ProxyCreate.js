@@ -1,35 +1,33 @@
-class ProxyCreate {
+export default class ProxyCreate {
 
-	static create(model, view) {
+  static create(model, view) {
 
-		return new Proxy(model, {
+    return new Proxy(model, {
 
-			get(target, prop, receiver) {
+      get(target, prop, receiver) {
+        if (typeof target[prop] === 'function') {
+          return function() {
+            let temp = Reflect.apply(target[prop], target, arguments);
 
-				if(typeof target[prop] === 'function') {
+            view.update(target);
 
-					return function() {
+            return temp;
+          };
+        }
 
-						let temp = Reflect.apply(target[prop], target, arguments);
+        return Reflect.get(target, prop, receiver);
+      },
 
-						view.update(target);
+      set(target, prop, value, receiver) {
 
-						return temp;
-					}
-				}
+        let temp = Reflect.set(target, prop, value, receiver);
 
-				return Reflect.get(target, prop, receiver)
-			},
+        view.update(target);
 
-			set(target, prop, value, receiver) {
+        return temp;
+      },
 
-				let temp = Reflect.set(target, prop, value, receiver);
+    });
 
-				view.update(target);
-
-				return temp;
-			}
-
-		});
-	}
+  }
 }

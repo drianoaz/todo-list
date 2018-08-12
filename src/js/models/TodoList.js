@@ -1,18 +1,22 @@
-class TodoList {
+export default class TodoList {
 
-	constructor() {
-		this._list = [];
-	}
+  constructor() {
 
-	get list() {
-		return [].concat(this._list);
-	}
+    this._list = [];
+  }
 
-	add(todoItem) {
-		this._list.push(todoItem);
-	}
+  get list() {
 
-	empty() {
-		this._list = [];
-	}
+    return [].concat(this._list);
+  }
+
+  add(todoItem) {
+
+    this._list.push(todoItem);
+  }
+
+  empty() {
+
+    this._list = [];
+  }
 }

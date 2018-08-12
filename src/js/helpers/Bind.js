@@ -1,11 +1,13 @@
-class Bind {
+import ProxyCreate from '../services/ProxyCreate';
 
-	constructor(model, view) {
+export default class Bind {
 
-		let proxy = ProxyCreate.create(model, view);
+  constructor(model, view) {
 
-		view.update(model);
+    const proxy = ProxyCreate.create(model, view);
 
-		return proxy;
-	}
+    view.update(model);
+
+    return proxy;
+  }
 }
