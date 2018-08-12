@@ -1,0 +1,26 @@
+{
+  "name": "todo-list",
+  "version": "0.0.1",
+  "description": "Este projeto foi criado com o intuito de colocar em prática meus os conhecimentos adquiridos sobre a implementação de classes e alguns design patterns do JavaScript moderno. A ideia inicial é desenvolver um Todo List ir acrescentando recursos à medida que avanço com meus estudos.",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.3.0"
+  },
+  "scripts": {
+		"lint": "npm run lint:js",
+    "lint:js": "eslint ./src/",
+    "fix:js": "eslint ./src/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drianoaz/todo-list.git"
+  },
+  "keywords": [],
+  "author": "Adriano de Azevedo <adrianopato.az@gmail.com> (https://drianoaz.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drianoaz/todo-list/issues"
+  },
+  "homepage": "https://github.com/drianoaz/todo-list#readme"
+}
