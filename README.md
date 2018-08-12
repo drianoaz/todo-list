@@ -93,6 +93,7 @@ testes automatizados neste projeto.
 - [x] Adicionar webpack e incluir recurso de minificação do código fonte.
 - [x] Adicionar suporte para navegadores antigos utilizando babel.
 - [x] Adicionar suporte à imports e corrigir multiplas tags scripts no arquivo `index.html`
+- [ ] Adicionar pwa-manifest e offline-plugin.
 - [ ] Adicionar testes automatizados.
 - [ ] Implementar uma API para "pegar" a lista de tarefas de um outro servidor.
 - [ ] Implementar um layout mais bonito e amigável, sem utilizar o bootstrap.
