@@ -2,9 +2,11 @@ const path = require('path');
 
 module.exports = env => {
   return {
-    entry: ['./src/js/app.js'],
+    entry: {
+      app: './src/js/app.js'
+    },
     output: {
-      filename: 'bundle.js',
+      filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist/js'),
       publicPath: 'dist/js',
     },
