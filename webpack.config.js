@@ -1,4 +1,3 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -85,7 +84,6 @@ const prodStart = () => {
   baseWebpack.optimization = {
     minimizer: [ new UglifyJsPlugin() ],
   };
-  baseWebpack.plugins.push(new BundleAnalyzerPlugin({analyzerMode: 'disabled'}));
 };
 
 const devStart = () => {
