@@ -1,59 +1,57 @@
-class TodoController {
+import Bind from '../helpers/Bind';
+import TodoList from '../models/TodoList';
+import TodoItem from '../models/TodoItem';
+import Message from '../models/Message';
+import TodoListView from '../views/TodoListView';
+import MessageView from '../views/MessageView';
 
-	constructor(selectors) {
+export default class TodoController {
 
-    	const { input, container, message } = selectors;
+  constructor(selectors) {
 
-		let $ = document.querySelector.bind(document);
+    const { input, container, message } = selectors;
+    const $ = document.querySelector.bind(document);
 
-		this._inputTodo = $(input);
+    this._inputTodo = $(input);
 
-		this._todoList = new Bind(
-			new TodoList(),
-			new TodoListView($(container))
-		);
+    this._todoList = new Bind(new TodoList(), new TodoListView($(container)));
+    this._message = new Bind(new Message(), new MessageView($(message)));
+  }
 
-		this._message = new Bind(
-			new Message(),
-			new MessageView($(message))
-		);
-	}
+  onSubmit(event) {
 
-	onSubmit(event) {
+    event.preventDefault();
 
-		event.preventDefault();
+    try {
 
-		try {
+      this._todoList.add(new TodoItem(this._inputTodo.value));
+      this._setMessage('Todo Item has been created.', 'success');
+      this._clearForm();
+    } catch (error) {
 
-			this._todoList.add(new TodoItem(this._inputTodo.value));
-			this._setMessage('Todo Item has been created.', 'success');
-			this._clearForm();
+      // eslint-disable-next-line
+      console.error(error);
+      this._setMessage(error.message, 'danger');
+    }
+  }
 
-		} catch(error) {
+  onClean(event) {
 
-			console.error(error);
-			this._setMessage(error.message, 'danger');
-		}
+    event.preventDefault();
 
-	}
+    this._todoList.empty();
+    this._setMessage('Todo List has been cleaned.', 'warning');
+  }
 
-	onClean(event) {
+  _clearForm() {
 
-		event.preventDefault();
+    this._inputTodo.value = '';
+    this._inputTodo.focus();
+  }
 
-		this._todoList.empty();
-		this._setMessage('Todo List has been cleaned.', 'warning');
-	}
+  _setMessage(message, type) {
 
-	_clearForm() {
-
-		this._inputTodo.value = '';
-		this._inputTodo.focus();
-	}
-
-	_setMessage(message, type) {
-
-		this._message.message = message;
-		this._message.type = type;
-	}
+    this._message.message = message;
+    this._message.type = type;
+  }
 }

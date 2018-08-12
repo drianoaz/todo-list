@@ -1,28 +1,34 @@
-class TodoItem {
+export default class TodoItem {
 
-	constructor(value) {
+  constructor(value) {
 
-		if(!value)
-			throw new Error("Can't create a TodoItem without a value");
+    if (!value) throw new Error('Can\'t create a TodoItem without a value');
 
-		this._value = value;
+    this._value = value;
 
-		Object.freeze(this);
-	}
+    Object.freeze(this);
+  }
 
-	get value() {
-		return this._value;
-	}
+  get value() {
 
-	get reverseValue() {
-		return this._value.split('').reverse().join('');
-	}
+    return this._value;
+  }
 
-	toUpper() {
-		return this._value.toUpperCase();
-	}
+  get reverseValue() {
 
-	toLower() {
-		return this._value.toLowerCase();
-	}
+    return this._value
+      .split('')
+      .reverse()
+      .join('');
+  }
+
+  toUpper() {
+
+    return this._value.toUpperCase();
+  }
+
+  toLower() {
+
+    return this._value.toLowerCase();
+  }
 }

@@ -1,10 +1,11 @@
-class View {
+export default class View {
+  constructor(element) {
 
-	constructor(element) {
-		this._element = element;
-	}
+    this._element = element;
+  }
 
-	update(model) {
-		this._element.innerHTML = this._template(model);
-	}
+  update(model) {
+
+    this._element.innerHTML = this._template(model);
+  }
 }

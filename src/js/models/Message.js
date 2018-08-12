@@ -1,25 +1,28 @@
-class Message {
+export default class Message {
 
-	constructor(message = '', type = 'info') {
+  constructor(message = '', type = 'info') {
 
-		this._message = message;
-		this._type = type;
-	}
+    this._message = message;
+    this._type = type;
+  }
 
-	get message() {
-		return this._message;
-	}
+  get message() {
 
-	set message(message) {
-		this._message = message;
-	}
+    return this._message;
+  }
 
-	get type() {
+  set message(message) {
 
-		return this._type;
-	}
+    this._message = message;
+  }
 
-	set type(type) {
-		this._type = type;
-	}
+  get type() {
+
+    return this._type;
+  }
+
+  set type(type) {
+
+    this._type = type;
+  }
 }
