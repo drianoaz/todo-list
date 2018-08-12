@@ -19,7 +19,6 @@
     "cssnano": "^4.0.5",
     "eslint": "^5.3.0",
     "file-loader": "^1.1.11",
-    "gh-pages-deploy": "^0.5.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
     "mini-css-extract-plugin": "^0.4.1",
@@ -37,19 +36,11 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "deploy": "gh-pages-deploy",
     "lint": "npm run lint:js",
     "lint:js": "eslint ./src/",
     "fix:js": "eslint ./src/ --fix",
     "dev": "./nodewebpack-dev-server -d",
     "precommit": "npm run lint"
-  },
-  "gh-pages-deploy": {
-    "staticpath": "dist",
-    "prep": [
-      "build"
-    ],
-    "noprompt": true
   },
   "repository": {
     "type": "git",
