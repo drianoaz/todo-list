@@ -1,7 +1,6 @@
 import TodoController from './controllers/TodoController';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/style.css';
+import '../scss/style.scss';
 
 window.todoController = new TodoController({
   input: '#todo',

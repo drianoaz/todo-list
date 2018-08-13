@@ -26,8 +26,14 @@
         <input type="text" id="todo" class="form-control" placeholder="Type a value...">
 
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="submit">Submit</button>
-          <button class="btn btn-outline-danger" type="button" onclick="todoController.onClean(event)">Clean list</button>
+          <button class="btn btn-outline-secondary" type="submit">
+            <span class="d-block d-sm-none fas fa-plus"></span>
+            <span class="d-none d-sm-block">Add</span>
+          </button>
+          <button class="btn btn-outline-danger" type="button" onclick="todoController.onClean(event)">
+            <span class="d-block d-sm-none fas fa-trash"></span>
+            <span class="d-none d-sm-block">Clean list</span>
+          </button>
         </div>
 
       </form>

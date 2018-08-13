@@ -41,20 +41,20 @@ body {
   flex-direction: column;
   font-size: 1rem;
   justify-content: center;
-}
 
-.footer .footer-description {
-  padding: 0;
-  margin: 0;
-}
+  .footer-description {
+    padding: 0;
+    margin: 0;
+  }
 
-.footer .footer-link {
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
+  .footer-link {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-.footer .footer-link:focus,
-.footer .footer-link:hover {
-  text-decoration: underline;
+  .footer-link:focus,
+  .footer-link:hover {
+    text-decoration: underline;
+  }
 }
