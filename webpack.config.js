@@ -1,6 +1,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -33,29 +34,52 @@ const baseWebpack = {
         test: /\.css$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
           {
             loader: 'css-loader',
             options: { importLoaders: 1 },
           },
           'postcss-loader',
-        ],
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ]
       },
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff&publicPath=../&name=fonts/[hash].[ext]',
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
+        loader: 'url-loader?limit=10000&mimetype=application/octet-stream&publicPath=../&name=fonts/[hash].[ext]',
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
+        loader: 'file-loader?publicPath=../&name=fonts/[hash].[ext]',
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
+        loader: 'url-loader?limit=10000&mimetype=image/svg+xml&publicPath=../&name=fonts/[hash].[ext]',
       },
     ],
   },
@@ -77,6 +101,7 @@ const baseWebpack = {
       filename: 'css/style.[contenthash].css',
     }),
     new CopyWebpackPlugin(copyFiles),
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
   ],
 };
 
