@@ -3,6 +3,11 @@ module.exports = {
     'autoprefixer': {},
     'rucksack-css': {},
     'postcss-font-magician': {},
-    'cssnano': {}
+    'cssnano': {
+      'preset': [
+        'default',
+        {'discardComments': {'removeAll': true}}
+      ]
+    }
   }
 };
